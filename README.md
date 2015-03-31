@@ -31,6 +31,9 @@ $ git submodule add git@github.com:Mic92/ansible-lxc.git /etc/ansible/connection
 connection_plugins = /usr/share/ansible_plugins/connection_plugins:/etc/ansible/connection_plugins/lxc
 ```
 
+Note that the connection plugin copies files over in the container's rootfs from the host, 
+which means that you should disable tmpfs mount on /tmp in the container for ansible to work.
+
 USAGE
 =====
 
